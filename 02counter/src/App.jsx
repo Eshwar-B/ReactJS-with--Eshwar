@@ -9,21 +9,23 @@ function App()
   const userName = " ESHWAR";
 //  let count = 5;
 
-  let [count , setCounter] = useState(5);
+  const [count , setCounter] = useState(5);
 
   const addValue = () => { 
     console.log("Value Added ",count);
     // count = count +1;
 
-    setCounter(count + 1);
+    setCounter( (prevCount) => {return prevCount +1} );
+    
   }
-
-  const removeValue = () => {
+  
+    const removeValue = () => {
     console.log("Value Removed",count);
     // count = count -1;
 
-    setCounter(count-1);
+    setCounter(prevCount => prevCount -1);
   }
+
 
   
 
@@ -43,4 +45,4 @@ function App()
   
 }
 
-export default App;
+export default App
